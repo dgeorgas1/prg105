@@ -32,15 +32,15 @@ def main():  # Define main
         coffee_connection.commit()  # Save changes to coffee.db database
 
         try:
-            file = open('coffeehouse_supplies.csv', 'r')  # Try to open file for reading
+            with open('coffeehouse_supplies.csv', 'r') as file:
 
-            for line in file:  # Loop through each line in file
-                line = line.strip('\n').split(',')  # Split line at commas stripping the new line
+                for line in file:  # Loop through each line in file
+                    line = line.strip('\n').split(',')  # Split line at commas stripping the new line
 
-                # Insert data into Coffee table
-                coffee_cursor.execute("""INSERT INTO Coffee (Product, Category, Supplier) 
+                    # Insert data into Coffee table
+                    coffee_cursor.execute("""INSERT INTO Coffee (Product, Category, Supplier) 
                                          VALUES (?, ?, ?)""", (line[0], line[1], line[2]))
-                coffee_connection.commit()  # Save changes to coffee.db database
+                    coffee_connection.commit()  # Save changes to coffee.db database
 
             coffee_cursor.execute("""SELECT * From Coffee""")  # Get all data from Coffee table
             results = coffee_cursor.fetchall()  # Fetch data
