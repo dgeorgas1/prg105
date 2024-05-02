@@ -50,7 +50,7 @@ def main():  # Define main
     # Get the values for printing
     print(f'\nEmployee: {production_worker.get_employee_number()} {production_worker.get_employee_name()}\n'
           f'Shift: {production_worker.get_shift_number()}\nPay Rate: ${production_worker.get_hourly_pay_rate()} per '
-          f'hour')
+          'hour')
 
 
 main()  # Call main

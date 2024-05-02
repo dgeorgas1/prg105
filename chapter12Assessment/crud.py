@@ -84,7 +84,7 @@ def update(customer_file):  # Define update function
     if customer_name in customer_file:  # Check if customer_name is in customer_file
         # If so, ask to confirm change
         answer = input(f'Current email for {customer_name} is {customer_file[customer_name]}. '
-                       f'Do you want to change it? (y/n): ')
+                       'Do you want to change it? (y/n): ')
         if answer == 'y':
             # Ask for customer_email and assign to customer_name key for value
             customer_email = input(f'Enter the new email address for {customer_name}: ')
@@ -103,7 +103,7 @@ def delete(customer_file):  # Define delete function
     if customer_name in customer_file:  # Check if customer_name is in customer_file
         # If so, ask to confirm deletion
         answer = input(f'Current email for {customer_name} is {customer_file[customer_name]}. '
-                       f'Are you sure you want to delete it? (y/n): ')
+                       'Are you sure you want to delete it? (y/n): ')
         if answer == 'y':
             del customer_file[customer_name]  # Delete customer_name from customer_file
             save(customer_file)  # Call save function
