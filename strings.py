@@ -19,14 +19,14 @@ def main():  # Define main function
     overdue_accounts = []  # Initialize overdue_accounts list to empty
 
     try:  # Try to open files
-        accounts_file = open("accounts.txt", "r")  # Open accounts.txt for reading
-        overdue_accounts_file = open("over90.txt", "r")  # Open over90.txt for reading
+        with open("accounts.txt", "r") as accounts_file:
+            with open("over90.txt", "r") as overdue_accounts_file:
 
-        for line in accounts_file:  # Iterate through each line of account_file
-            accounts.append(line)  # Append line to accounts list
+                for line in accounts_file:  # Iterate through each line of account_file
+                    accounts.append(line)  # Append line to accounts list
 
-        for line in overdue_accounts_file:  # Iterate through each line of overdue_account_file
-            overdue_accounts.append(line)  # Append line to overdue_accounts list
+                for line in overdue_accounts_file:  # Iterate through each line of overdue_account_file
+                    overdue_accounts.append(line)  # Append line to overdue_accounts list
 
         for value in overdue_accounts:  # Iterate through each value of overdue_accounts list
             value = value.rstrip('\n')  # Strip the new line
