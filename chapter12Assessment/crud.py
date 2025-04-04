@@ -8,6 +8,7 @@ pickle the dictionary and save it to a file whenever changes are made. Each time
 retrieve the dictionary from the file and unpickle it. The main menu will repeat until the user chooses to QUIT."""
 
 import pickle
+import fickling
 
 # Initialize Global Variables
 LOOK_UP = 1
@@ -20,7 +21,7 @@ QUIT = 5
 def main():  # Define main function
     try:
         pickled_file = open('pickled_file.dat', 'rb')  # Try to open the pickled_file
-        customer_file = pickle.load(pickled_file)  # Unpickle the customer_file
+        customer_file = fickling.load(pickled_file)  # Unpickle the customer_file
         pickled_file.close()  # Close pickled_file
     except FileNotFoundError:
         customer_file = {}  # Initialize customer_file as an empty dictionary

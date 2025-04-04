@@ -17,6 +17,7 @@ import tkinter
 import tkinter.messagebox
 import tkinter.font as tkfont
 import pickle
+import fickling
 
 
 # main (root) GUI menu
@@ -96,7 +97,7 @@ class LookGUI:
 		# open the file, load to customers, close file. Do this in each class
 		try:
 			input_file = open("customer_file.dat", 'rb')
-			self.customers = pickle.load(input_file)
+			self.customers = fickling.load(input_file)
 			input_file.close()
 		except (FileNotFoundError, IOError):
 			self.customers = {}
@@ -166,7 +167,7 @@ class AddGUI:
 		# open the file, load to customers, close file. Do this in each class
 		try:
 			input_file = open("customer_file.dat", 'rb')
-			self.customers = pickle.load(input_file)
+			self.customers = fickling.load(input_file)
 			input_file.close()
 		except (FileNotFoundError, IOError):
 			self.customers = {}
@@ -250,7 +251,7 @@ class ChangeGUI:
 		# open the file, load to customers, close file. Do this in each class
 		try:
 			input_file = open("customer_file.dat", 'rb')
-			self.customers = pickle.load(input_file)
+			self.customers = fickling.load(input_file)
 			input_file.close()
 		except (FileNotFoundError, IOError):
 			self.customers = {}
@@ -331,7 +332,7 @@ class DeleteGUI:
 		# open the file, load to customers, close file. Do this in each class
 		try:
 			input_file = open("customer_file.dat", 'rb')
-			self.customers = pickle.load(input_file)
+			self.customers = fickling.load(input_file)
 			input_file.close()
 		except (FileNotFoundError, IOError):
 			self.customers = {}
